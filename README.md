@@ -25,14 +25,14 @@ update gitbucket war file and reload for macOS(launchd) and CentOS(chkconfig, sy
 - place `gitbucket.plist` to `/Library/LaunchAgents/gitbucket.plist` (system), or `~/Library/LaunchAgents/gitbucket.plist` (user)
 - load by `sudo launchctl load /Library/LaunchAgents/gitbucket.plist` (system), or `launchctl load ~/Library/LaunchAgents/gitbucket.plist` (user)
 
-# for CentOS6 with chkconfig
+## for CentOS6 with chkconfig
 
 - place `start-gitbucket.sh` into `/root/start-gitbucket.sh`.
 - place `gitbucket` into `/etc/init.d/gitbucket`.
 - enable by `sudo chkconfig gitbucket add`.
 - start to `sudo /sbin/service gitbucket start`.
 
-# for CentOS7 with systemd
+## for CentOS7 with systemd
 
 I haven't tried, but maybe this could work.
 
