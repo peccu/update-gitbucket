@@ -1,0 +1,17 @@
+[Unit]
+Description=GitBucket
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/java -Dmail.smtp.starttls.enable=true -jar /root/gitbucket/gitbucket.war --gitbucket.home=/opt/gitbucket --port=8080
+# if you need proxy
+# ExecStart=/usr/bin/java -Dhttp.proxyHost=proxy.example.com -Dhttp.proxyPort=8080 -Dhttps.proxyHost=proxy.example.com -Dhttps.proxyPort=8080 -Dmail.smtp.starttls.enable=true -jar /root/gitbucket/gitbucket.war --gitbucket.home=/opt/gitbucket --port=8080
+Restart=always
+RestartSec=2s
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=gitbucket
+User=root
+
+[Install]
+WantedBy=multi-user.target
